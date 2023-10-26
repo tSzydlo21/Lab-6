@@ -3,11 +3,11 @@ def encode(password):
     length = len(str(password))
     num = int
     while length != 0:
-        num = (int(str(code)[0:1])) + 3
+        num = (int(str(password)[0:1])) + 3
         if num >= 10:
             num = num - 10
         final = final + str(num)
-        code = str(code)[1:]
+        password = str(password)[1:]
         length -= 1
     return final
 
@@ -15,7 +15,6 @@ def decode(password):
     return
 
 def main():
-    print(encode(123456))
     userChoice = True
     encodedPassword = None
     while userChoice:
@@ -36,6 +35,6 @@ def main():
             encodedPassword = encode(password)
             print("")
         elif (userInput == 2):
-            print("The encoded password is " + str(encodedPassword) + ", and the original password is " + decode(password))
+            print("The encoded password is " + str(encodedPassword) + ", and the original password is " + str(decode(password)))
             print("")
 main()
