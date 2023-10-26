@@ -12,7 +12,15 @@ def encode(password):
     return final
 
 def decode(password):
-    return
+    final = ''
+
+    for i in password:
+        if int(i) - 3 < 0:
+            final += str(7+int(i))
+        else:
+            final += str(int(i)-3)
+
+    return final
 
 def main():
     userChoice = True
@@ -35,6 +43,6 @@ def main():
             encodedPassword = encode(password)
             print("")
         elif (userInput == 2):
-            print("The encoded password is " + str(encodedPassword) + ", and the original password is " + str(decode(password)))
+            print("The encoded password is " + str(encodedPassword) + ", and the original password is " + str(decode(encodedPassword)))
             print("")
 main()
